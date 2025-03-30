@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SKYTECH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+  />
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar {
+            padding: 0.8rem 0rem;
+            transition: all 0.3s ease-in-out;
+            height: 5rem;
+            position: relative;
+            z-index: 1050; 
+        }
+
+        /* Navbar Brand (Logo & Text) */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            margin-right: auto; /* Keeps logo on the left */
+        }
+
+        /* Logo Size */
+        .navbar-logo {
+            height: 4.5rem; /* Slightly bigger */
+            width: 4.5rem;
+        }
+
+        /* Logo Text */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            font-weight: bold;
+            color: #07708dea;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: #325368d9;
+            margin: 0px 5px;
+        }
+
+        /* Toggler Button */
+        .custom-toggler {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 1.8rem;
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            color: #333;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Close Icon */
+        .close-icon {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #000;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        /* Navbar Links */
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.1rem;
+            color: #000;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: rgb(19, 113, 139);
+        }
+
+        /* Active Link */
+        .navbar-nav .nav-item .nav-link.active {
+            color: rgb(238, 162, 21);
+        }
+
+
+
+        /* Mobile Responsive Fixes */
+        @media (max-width: 992px) {
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            /* Ensure logo stays on the left */
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                position: relative;
+                left: 0;
+                transform: none;
+            }
+
+            /* Toggler stays on the left */
+            .custom-toggler {
+                order: -1;
+            }
+
+            /* Smaller logo for mobile */
+            .navbar-logo {
+                height: 3.5rem;
+                width: 3.5rem;
+            }
+
+            /* Adjust collapsed menu */
+            .navbar-collapse {
+                background-color: rgba(255, 255, 255, 0.95);
+                padding: 1rem;
+                border-radius: 8px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                z-index: 1050;
+            }
+
+            .navbar-collapse.show {
+                display: block;
+            }
+
+            /* Remove underline effect in mobile */
+            .navbar-nav .nav-item .nav-link::after {
+                width: 0;
+            }
+        }
+
+        
+ /* Hero Section */
+.hero {
+    position: relative;
+    background: url('../assets/images/aboutushero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Default: Column layout */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mobile View: Make it Horizontal */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+        min-height: 50vh;
+    }
+
+    .hero .container {
+        text-align: left;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    .hero p {
+        font-size: 1rem;
+        max-width: 50%;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background-color: #f9fafb;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: block;
+}
+
+/* Section Title - "Our Story" at the Top */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About Content - "Who We Are" and Image */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Text Section */
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Image Section */
+.about-image {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .about-image {
+        order: 1;
+        
+        max-width: 100%;
+    }
+    .about-text{
+        order: 2;
+    }
+}
+
+
+  
+
+        /* Footer styling */
+        footer {
+            background-color: #3333339d;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        /* Logo section */
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-logo img {
+            max-width: 100px;
+            height: auto;
+            
+        }
+
+        .footer-logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            font-weight: bold;
+            color: #07708dea;
+        }
+
+        .footer-logo-text p {
+            font-size: 0.9rem;
+            color: #325368d9;
+            margin: 0px 10px;
+        }
+
+        /* Quick links section */
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            padding-bottom: 0.5rem;
+        }
+
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #4d9aff;
+        }
+
+        /* Contact section */
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-contact h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            padding-bottom: 0.5rem;
+        }
+
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: #4d4d4d;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #4d9aff;
+        }
+
+        /* Bottom bar */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                gap: 2rem;
+                padding-left: 30px;
+            }
+            
+            .footer-logo, .footer-links, .footer-contact {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg bg-white fixed-top">
+    <div class="container">
+      <!-- Mobile Menu Toggle -->
+      <button class="navbar-toggler custom-toggler" type="button" id="menuToggle">
+        <i class="bi bi-list menu-icon"></i> <!-- Bootstrap Icon -->
+      </button>
+  
+      <!-- Logo & Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="../assets/images/skytechitlogo.png" alt="SKYTECH Logo" class="navbar-logo" />
+        <div class="logo-text">
+          <h1>SKYTECH</h1>
+          <p>IT SOLUTIONS</p>
+        </div>
+      </a>
+  
+      <!-- Navigation Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <span class="close-icon d-lg-none" id="closeMenu">×</span>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#services">Our Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#faq">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+</nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About Our Company</h1>
+            <p>Learn about our journey, our mission, and the values that drive everything we do.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who we are</h2>
+                <!-- <p>We've come a long way since we began this journey</p> -->
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <!-- <h3>Who We Are</h3> -->
+                    <p>Skytech IT Solutions is a forward-thinking technology company dedicated to providing comprehensive IT solutions that drive business growth and innovation. With expertise in E-commerce, Computer Systems, and Software Trading, we help businesses leverage the power of technology to enhance efficiency, streamline operations, and create exceptional digital experiences.</p>
+                    <p>
+                        We pride ourselves on offering tailored solutions that meet the unique needs of our clients, ranging from startups to large enterprises. Whether it’s developing robust e-commerce platforms, supplying cutting-edge software, or providing IT consulting services, Skytech IT Solutions is committed to delivering excellence at every step.
+                        </p>
+                    <p>Our team consists of highly skilled professionals with deep industry knowledge, ensuring that we stay ahead of technological advancements and market trends. By integrating the latest innovations, we empower businesses to navigate the digital landscape with confidence and agility.</p>
+                </div>
+                <div class="about-image">
+                    <img src="../assets/images/who we are.jpg" alt="Company team meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <section class="mission-vision">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="../assets/images/visionandmission.jpg" alt="Vision illustration">
+                </div>
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At Skytech IT Solutions, our mission is to empower businesses through technology-driven solutions that enhance efficiency, security, and scalability. We are committed to delivering cutting-edge IT solutions by providing innovative and customized software, e-commerce platforms, and IT systems that align with business goals. Our focus is on driving digital transformation, helping organizations transition to modern digital frameworks while improving productivity and customer engagement.
+                    </p>
+                    <p>We ensure reliability and security by implementing robust and secure IT infrastructure to safeguard business operations and data integrity. Our approach is centered on fostering long-term partnerships, building strong relationships with our clients through exceptional service, continuous support, and a commitment to their success. Our vision is to become a trusted technology partner for businesses worldwide, delivering future-ready solutions that accelerate growth, enhance operational efficiency, and create seamless digital experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section class="mission-vision">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image order-2">
+                    <img src="../assets/images/visionandmission.jpg" alt="Vision illustration">
+                </div>
+                <div class="about-text order-1">
+
+                    <h3>Our Vision</h3>
+                    <p>At Skytech IT Solutions, our vision is to be at the forefront of technological innovation and digital revolution, shaping the future of businesses through transformative IT solutions. We aspire to become a global leader in E-commerce, Computer Systems, and Software Trading by delivering cutting-edge, AI-driven, and future-ready solutions that empower businesses to thrive in an increasingly digital world.
+                    </p>
+                    <p>
+                        In an era defined by rapid technological evolution, we envision a world where businesses seamlessly integrate emerging technologies such as Artificial Intelligence, Machine Learning, Blockchain, Cloud Computing, and the Internet of Things to drive growth, enhance efficiency, and revolutionize customer experiences. We strive to bridge the gap between technology and business success, enabling enterprises to automate processes, optimize operations, and create personalized digital experiences that redefine industry standards.
+                        </p>
+                        <p>
+
+At Skytech IT Solutions, we are committed to leading the next wave of digital transformation by pioneering innovation, developing and integrating advanced IT solutions that push the boundaries of what’s possible in E-commerce and software trading. We aim to enable smart business ecosystems by empowering businesses with intelligent, data-driven technologies that enhance decision-making and operational efficiency. Our focus extends to driving digital sustainability by leveraging cloud-based and energy-efficient IT solutions that promote eco-friendly digital transformation.
+
+                        </p>
+                        <p>Security remains a key priority as we work towards securing the digital future by implementing robust cybersecurity frameworks and blockchain technologies to ensure data integrity and protection against evolving threats. As we embrace the future, our goal is to redefine industries, enhance digital accessibility, and create a smarter, more connected world through our technology-driven solutions. Skytech IT Solutions is not just about adapting to change; we are here to lead the revolution and shape the future of IT.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide our decisions and shape our culture</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">⭐</div>
+                    <h3>Innovation</h3>
+                    <p>We continuously explore new ideas and technologies to deliver forward-thinking solutions that address evolving challenges.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Integrity</h3>
+                    <p>We uphold the highest ethical standards in all our interactions, building trust through transparency and honesty.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🚀</div>
+                    <h3>Excellence</h3>
+                    <p>We are committed to delivering exceptional quality in everything we do, constantly raising the bar for ourselves.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Sustainability</h3>
+                    <p>We prioritize environmentally responsible practices and solutions that contribute to a better future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the passionate people behind our success</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/400/400" alt="CEO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Jane Doe</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="#" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/400/400" alt="CTO">
+                    </div>
+                    <div class="member-info">
+                        <h3>John Smith</h3>
+                        <p>Chief Technology Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="#" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/400/400" alt="COO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Johnson</h3>
+                        <p>Chief Operations Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="#" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/api/placeholder/400/400" alt="CMO">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Brown</h3>
+                        <p>Chief Marketing Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                            <a href="#" aria-label="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+   <!-- Footer section -->
+<footer>
+    <div class="footer-container">
+        <!-- Logo and company description -->
+        <div class="footer-logo">
+            <img src="../assets/images/skytechitlogo.png" alt="Company Logo">
+            <div class="footer-logo-text">
+                <h1>SKYTECH</h1>
+                <p>IT SOLUTIONS</p>
+            </div>
+        </div>
+        
+        <!-- Quick links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About Us</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#faq">FAQs</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contact information -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><i class="bi bi-geo-alt-fill"></i> United Arab Emirates</p>
+                <p><i class="bi bi-telephone"></i> +971544706417</p>
+                <p><i class="bi bi-envelope"></i> Info@skytechfze.com</p>
+            </div>
+            
+            <!-- Social media links -->
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copyright section -->
+    <div class="footer-bottom">
+        <p>&copy; 2025 SKYTECH ITSOLUTIONS. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../scripts/script.js"></script>
+</body>
+</html>
