@@ -275,8 +275,12 @@
 }
 
 /* Text Section */
-.about-text {
+.mission .about-text {
     flex: 1;
+}
+.vision .about-text{
+    flex: 1;
+    order: 1;
 }
 
 .about-text h3 {
@@ -292,7 +296,16 @@
 }
 
 /* Image Section */
-.about-image {
+.vision .about-image {
+    flex: 1;
+    max-width: 50%;
+    order: 2;
+}
+.about .about-image {
+    max-width: 50%;
+}
+
+.mission .about-image {
     flex: 1;
     max-width: 50%;
 }
@@ -311,15 +324,19 @@
         text-align: center;
         padding: 30px;
     }
+    .about-text h3{
+        text-align: center;
+    }
+    .about-content .about-image {
+    order: 1;
+    max-width: 100%;
+}
 
-    .about-image {
-        order: 1;
-        
-        max-width: 100%;
-    }
-    .about-text{
-        order: 2;
-    }
+.about-content .about-text {
+    order: 2;
+    text-align: start;
+}
+
 }
 
 
@@ -527,7 +544,7 @@
     </section>
     <hr>
 
-    <section class="mission-vision">
+    <section class="mission">
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
@@ -545,26 +562,19 @@
 
     <hr>
     
-    <section class="mission-vision">
+    <section class="vision">
         <div class="container">
             <div class="about-content">
-                <div class="about-image order-2">
+                <div class="about-image">
                     <img src="../assets/images/visionandmission.jpg" alt="Vision illustration">
                 </div>
-                <div class="about-text order-1">
+                <div class="about-text">
 
                     <h3>Our Vision</h3>
-                    <p>At Skytech IT Solutions, our vision is to be at the forefront of technological innovation and digital revolution, shaping the future of businesses through transformative IT solutions. We aspire to become a global leader in E-commerce, Computer Systems, and Software Trading by delivering cutting-edge, AI-driven, and future-ready solutions that empower businesses to thrive in an increasingly digital world.
+                    <p>At Skytech IT Solutions, our vision is to lead the digital revolution by delivering transformative, AI-driven IT solutions that empower businesses to succeed in a rapidly evolving world. We aim to be a global leader in E-commerce, Computer Systems, and Software Trading by integrating cutting-edge technologies like AI, Machine Learning, Blockchain, IoT, and Cloud Computing to optimize operations, drive growth, and elevate customer experiences.
                     </p>
                     <p>
-                        In an era defined by rapid technological evolution, we envision a world where businesses seamlessly integrate emerging technologies such as Artificial Intelligence, Machine Learning, Blockchain, Cloud Computing, and the Internet of Things to drive growth, enhance efficiency, and revolutionize customer experiences. We strive to bridge the gap between technology and business success, enabling enterprises to automate processes, optimize operations, and create personalized digital experiences that redefine industry standards.
-                        </p>
-                        <p>
-
-At Skytech IT Solutions, we are committed to leading the next wave of digital transformation by pioneering innovation, developing and integrating advanced IT solutions that push the boundaries of what’s possible in E-commerce and software trading. We aim to enable smart business ecosystems by empowering businesses with intelligent, data-driven technologies that enhance decision-making and operational efficiency. Our focus extends to driving digital sustainability by leveraging cloud-based and energy-efficient IT solutions that promote eco-friendly digital transformation.
-
-                        </p>
-                        <p>Security remains a key priority as we work towards securing the digital future by implementing robust cybersecurity frameworks and blockchain technologies to ensure data integrity and protection against evolving threats. As we embrace the future, our goal is to redefine industries, enhance digital accessibility, and create a smarter, more connected world through our technology-driven solutions. Skytech IT Solutions is not just about adapting to change; we are here to lead the revolution and shape the future of IT.</p>
+                        We are committed to shaping smart, secure, and sustainable digital ecosystems by developing advanced, data-driven solutions that enhance decision-making and operational efficiency. With a strong focus on innovation, cybersecurity, and eco-friendly digital transformation, Skytech strives to redefine industries, bridge the gap between technology and business success, and create a smarter, more connected future.</p>
                 </div>
             </div>
         </div>
@@ -708,7 +718,7 @@ At Skytech IT Solutions, we are committed to leading the next wave of digital tr
     
     <!-- Copyright section -->
     <div class="footer-bottom">
-        <p>&copy; 2025 SKYTECH ITSOLUTIONS. All Rights Reserved.</p>
+        <p>&copy; 2025 <strong>SKYTECH ITSOLUTIONS.</strong> All Rights Reserved.</p>
     </div>
 </footer>
 
