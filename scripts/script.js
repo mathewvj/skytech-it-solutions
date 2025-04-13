@@ -45,6 +45,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
+
+// toggle for the faq section
+
+function toggleFaqs(){
+  const moreFaqs = document.getElementById("moreFaqs")
+  const btn = document.getElementById("toggleBtn")
+
+  if(moreFaqs.style.display === 'none'){
+    moreFaqs.style.display = "block"
+    btn.innerHTML = 'Show Less &nbsp;<i class="fas fa-angle-double-up"></i>'
+  } else {
+    moreFaqs.style.display = "none"
+    btn.innerHTML = 'View More &nbsp;<i class="fas fa-angle-double-down"></i>'
+  }
+}
+
   // document.addEventListener("DOMContentLoaded", function () {
   //   document.querySelectorAll("a.nav-link").forEach((anchor) => {
   //     anchor.addEventListener("click", function (e) {

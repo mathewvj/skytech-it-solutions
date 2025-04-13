@@ -468,6 +468,13 @@ body {
   color: #555;
   font-size: 16px;
 }
+.faq-viewmore{
+  color: #0062cc;
+  font-weight: 500;
+}
+.faq-viewmore:hover{
+  color: #0750be;
+}
 
 @media (max-width: 768px) {
   .faq {
