@@ -242,7 +242,7 @@ body {
 
 /* Services section */
 .services {
-  background-color: rgba(246, 251, 254, 0.622);
+  background-color: rgba(220, 231, 238, 0.622);
 }
 .services .container {
   max-width: 1200px;
@@ -290,17 +290,17 @@ body {
 }
 
 .service-item {
-  background: #ffffff;
+  /* background: #ffffff; */
   border-radius: 8px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); */
   transition: all 0.3s ease;
 }
 
 .service-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.471);
   background-color: #f9f9f9;
 }
 
@@ -325,6 +325,7 @@ body {
   background-color: #007bff;
   color: white;
   padding: 10px;
+  border-radius: 30px;
 }
 
 .view-services .btn:hover {

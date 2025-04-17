@@ -300,10 +300,11 @@
   }
 
   .service-item {
+    height: 100%;
     background-color: white;
     padding: 25px;
     border-radius: 8px;
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -374,10 +375,11 @@
 
   .why-choose-item {
     display: flex;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     align-items: flex-start;
     padding: 20px;
     border-radius: 15px;
+    height: 100%;
   }
 
   .why-icon {

@@ -1,696 +1,871 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
+      * {
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .navbar {
+        padding: 0.8rem 0rem;
+        transition: all 0.3s ease-in-out;
+        height: 5rem;
+        position: relative;
+        z-index: 1050;
+      }
+
+      /* Navbar Brand (Logo & Text) */
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        margin-right: auto; /* Keeps logo on the left */
+      }
+
+      /* Logo Size */
+      .navbar-logo {
+        height: 4.5rem; /* Slightly bigger */
+        width: 4.5rem;
+      }
+
+      /* Logo Text */
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+      }
+
+      .logo-text h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        font-weight: bold;
+        color: #07708dea;
+      }
+
+      .logo-text p {
+        font-size: 0.9rem;
+        color: #325368d9;
+        margin: 0px 5px;
+      }
+
+      /* Toggler Button */
+      .custom-toggler {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.8rem;
+      }
+
+      /* Menu Icon */
+      .menu-icon {
+        color: #333;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Close Icon */
+      .close-icon {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #000;
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+
+      /* Navbar Links */
+      .navbar-nav .nav-item .nav-link {
+        font-size: 1.1rem;
+        color: #000;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+        position: relative;
+        font-weight: 600;
+      }
+
+      .navbar-nav .nav-item .nav-link:hover {
+        color: rgb(19, 113, 139);
+      }
+
+      /* Active Link */
+      .navbar-nav .nav-item .nav-link.active {
+        color: rgb(238, 162, 21);
+      }
+
+      /* Mobile Responsive Fixes */
+      @media (max-width: 992px) {
+        .container {
+          display: block;
+          align-items: center;
+          justify-content: space-between;
         }
 
-        .navbar {
-            padding: 0.8rem 0rem;
-            transition: all 0.3s ease-in-out;
-            height: 5rem;
-            position: relative;
-            z-index: 1050; 
-        }
-
-        /* Navbar Brand (Logo & Text) */
+        /* Ensure logo stays on the left */
         .navbar-brand {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            margin-right: auto; /* Keeps logo on the left */
+          display: flex;
+          align-items: center;
+          position: relative;
+          left: 0;
+          transform: none;
         }
 
-        /* Logo Size */
-        .navbar-logo {
-            height: 4.5rem; /* Slightly bigger */
-            width: 4.5rem;
-        }
-
-        /* Logo Text */
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            margin-left: 10px;
-        }
-
-        .logo-text h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-            font-weight: bold;
-            color: #07708dea;
-        }
-
-        .logo-text p {
-            font-size: 0.9rem;
-            color: #325368d9;
-            margin: 0px 5px;
-        }
-
-        /* Toggler Button */
+        /* Toggler stays on the left */
         .custom-toggler {
-            background-color: transparent;
-            border: none;
-            outline: none;
-            font-size: 1.8rem;
+          order: -1;
         }
 
-        /* Menu Icon */
-        .menu-icon {
-            color: #333;
-            transition: transform 0.3s ease-in-out;
+        /* Smaller logo for mobile */
+        .navbar-logo {
+          height: 3.5rem;
+          width: 3.5rem;
         }
 
-        /* Close Icon */
-        .close-icon {
-            display: block;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #000;
-            cursor: pointer;
-            position: absolute;
-            top: 15px;
-            right: 15px;
+        /* Adjust collapsed menu */
+        .navbar-collapse {
+          background-color: rgba(255, 255, 255, 0.95);
+          padding: 1rem;
+          border-radius: 8px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          z-index: 1050;
         }
 
-        /* Navbar Links */
-        .navbar-nav .nav-item .nav-link {
-            font-size: 1.1rem;
-            color: #000;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-            position: relative;
-            font-weight: 600;
+        .navbar-collapse.show {
+          display: block;
         }
 
-        .navbar-nav .nav-item .nav-link:hover {
-            color: rgb(19, 113, 139);
+        /* Remove underline effect in mobile */
+        .navbar-nav .nav-item .nav-link::after {
+          width: 0;
         }
+      }
 
-        /* Active Link */
-        .navbar-nav .nav-item .nav-link.active {
-            color: rgb(238, 162, 21);
-        }
+      .services{
+        background-image: url('../assets/images/servicebg.avif');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+        padding: 40px 20px; /* important for breathing space */
+        color: white;
+        position: relative;
+       overflow: hidden;
+      }
+      .services::before{
+        content: '';
+        position:absolute;
+        top:0; left:0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.695);
+        z-index: 1;
+      }
+      .services .container {
+        position: relative;
+        z-index: 2; 
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-
-
-        /* Mobile Responsive Fixes */
-        @media (max-width: 992px) {
-            .container {
-                display: block;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            /* Ensure logo stays on the left */
-            .navbar-brand {
-                display: flex;
-                align-items: center;
-                position: relative;
-                left: 0;
-                transform: none;
-            }
-
-            /* Toggler stays on the left */
-            .custom-toggler {
-                order: -1;
-            }
-
-            /* Smaller logo for mobile */
-            .navbar-logo {
-                height: 3.5rem;
-                width: 3.5rem;
-            }
-
-            /* Adjust collapsed menu */
-            .navbar-collapse {
-                background-color: rgba(255, 255, 255, 0.95);
-                padding: 1rem;
-                border-radius: 8px;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                z-index: 1050;
-            }
-
-            .navbar-collapse.show {
-                display: block;
-            }
-
-            /* Remove underline effect in mobile */
-            .navbar-nav .nav-item .nav-link::after {
-                width: 0;
-            }
-        }
-
-
-        .services .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 15px;
-        }
-        
-        .section-title {
+      .section-title {
             text-align: center;
             margin-bottom: 50px;
         }
         
         .section-title h2 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 15px;
+            color: #d8d2d2;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
         }
         
-        .section-title p {
-            color: #666;
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            width: 70%;
+            margin: 0 auto;
+            background: linear-gradient(to right, transparent, #0d6efd, transparent);
+        }
+        
+        /* .section-title p {
             max-width: 700px;
             margin: 0 auto;
-        }
-        
+            color: #6c757d;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        } */
+
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 30px;
+            justify-content: center;
         }
         
         .service-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 380px;
             background: #fff;
-            border-radius: 8px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
         }
         
         .service-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            background-color: #f9f9f9;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
         }
         
         .service-icon {
-            font-size: 40px;
-            color: #4a90e2;
-            margin-bottom: 20px;
+            position: absolute;
+            top: -20px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4a90e2, #6772e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(73, 144, 226, 0.3);
+            z-index: 1;
+        }
+        
+        .service-icon i {
+            color: white;
+            font-size: 28px;
+        }
+        
+        .service-content {
+            padding: 40px 30px 30px;
         }
         
         .service-title {
-            font-size: 20px;
+            margin-top: 15px;
             margin-bottom: 15px;
-            color: #222;
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
         }
         
         .service-description {
             color: #666;
-            font-size: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
         
-        /* Responsive */
-        @media (max-width: 992px) {
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .view-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #4a90e2, #6772e5);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
         }
-        @media (max-width: 576px) {
-    .services .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+        
+        .view-more:hover {
+            background: linear-gradient(135deg, #6772e5, #4a90e2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(73, 144, 226, 0.4);
+            color: white;
+        }
+        
+        .view-more i {
+            transition: transform 0.3s ease;
+        }
+        
+        .view-more:hover i {
+            transform: translateX(5px);
+        }
 
-    .services-grid {
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        gap: 15px;
-        width: 100%;
-    }
+      /* Responsive */
+     
+      @media (max-width: 768px) {
+        .services{
+            padding: 20px;
+        }
+        .services .container {
+          align-items: center;
+          text-align: center;
 
-    .service-item {
-        width: 100%; /* Full width */
-        max-width: 400px; /* Optional: Limits max width for better readability */
+        }
+
+        .services-grid {
+          display: flex;
+          flex-direction: column; /* Stack items vertically */
+          gap: 15px;
+          width: 100%;
+        }
+
+        .service-item {
+          width: 100%; /* Full width */
+          max-width: 400px; /* Optional: Limits max width for better readability */
+          margin: 0 auto;
+        }
+      }
+      /* Footer styling */
+      footer {
+        background-color: #3333339d;
+        color: white;
+        padding: 2rem 1rem;
+        margin-top: auto;
+      }
+
+      .footer-container {
+        max-width: 1200px;
         margin: 0 auto;
-    }
-}
-           /* Footer styling */
-   footer {
-    background-color: #3333339d;
-    color: white;
-    padding: 2rem 1rem;
-    margin-top: auto;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-/* Logo section */
-.footer-logo {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-logo img {
-    max-width: 100px;
-    height: auto;
-    
-}
-
-.footer-logo-text h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: #07708dea;
-}
-
-.footer-logo-text p {
-    font-size: 0.9rem;
-    color: #325368d9;
-    margin: 0px 10px;
-}
-
-/* Quick links section */
-.footer-links {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-links h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    padding-bottom: 0.5rem;
-}
-
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links a {
-    color: #ddd;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #4d9aff;
-}
-
-/* Contact section */
-.footer-contact {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-contact h3 {
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    padding-bottom: 0.5rem;
-}
-
-
-.contact-info p {
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: #4d4d4d;
-    color: white;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.social-links a:hover {
-    background-color: #4d9aff;
-}
-
-/* Bottom bar */
-.footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid #444;
-    font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
         gap: 2rem;
-        padding-left: 30px;
-    }
-    
-    .footer-logo, .footer-links, .footer-contact {
-        width: 100%;
-    }
-}
-    </style>
-</head>
-<body>
+      }
 
+      /* Logo section */
+      .footer-logo {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-logo img {
+        max-width: 100px;
+        height: auto;
+      }
+
+      .footer-logo-text h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        font-weight: bold;
+        color: #07708dea;
+      }
+
+      .footer-logo-text p {
+        font-size: 0.9rem;
+        color: #325368d9;
+        margin: 0px 10px;
+      }
+
+      /* Quick links section */
+      .footer-links {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-links h3 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: #4d9aff;
+      }
+
+      /* Contact section */
+      .footer-contact {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-contact h3 {
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .contact-info p {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background-color: #4d4d4d;
+        color: white;
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+
+      .social-links a:hover {
+        background-color: #4d9aff;
+      }
+
+      /* Bottom bar */
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid #444;
+        font-size: 0.9rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          gap: 2rem;
+          padding-left: 30px;
+        }
+
+        .footer-logo,
+        .footer-links,
+        .footer-contact {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-white fixed-top">
-        <div class="container">
-          <!-- Mobile Menu Toggle -->
-          <button class="navbar-toggler custom-toggler" type="button" id="menuToggle">
-            <i class="bi bi-list menu-icon"></i> <!-- Bootstrap Icon -->
-          </button>
-      
-          <!-- Logo & Brand -->
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="../assets/images/skytechitlogo.png" alt="SKYTECH Logo" class="navbar-logo" />
-            <div class="logo-text">
-              <h1>SKYTECH</h1>
-              <p>IT SOLUTIONS</p>
-            </div>
-          </a>
-      
-          <!-- Navigation Menu -->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <span class="close-icon d-lg-none" id="closeMenu">×</span>
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#about">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#services">Our Services</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#faq">FAQs</a></li>
-              <li class="nav-item"><a class="nav-link" href="/#contact">Contact Us</a></li>
-            </ul>
+      <div class="container">
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          id="menuToggle"
+        >
+          <i class="bi bi-list menu-icon"></i>
+          <!-- Bootstrap Icon -->
+        </button>
+
+        <!-- Logo & Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="../assets/images/skytechitlogo.png"
+            alt="SKYTECH Logo"
+            class="navbar-logo"
+          />
+          <div class="logo-text">
+            <h1>SKYTECH</h1>
+            <p>IT SOLUTIONS</p>
           </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <span class="close-icon d-lg-none" id="closeMenu">×</span>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#services">Our Services</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/#faq">FAQs</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <section class="services">
-    <div class="container">
+      <div class="container">
         <div class="section-title">
-            <h2>Our Services</h2>
-            <p>We offer a comprehensive range of professional services tailored to meet your needs. Explore our services below to learn how we can help you achieve your goals.</p>
+          <h2>Our Services</h2>
         </div>
-        
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3 class="service-title">Computer and Accessories Trading</h3>
-                <p class="service-description">Custom website development with responsive design and optimized performance.</p>
-                <div>
-                    <a href="./Compute&Accessories-Trading.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 2 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3 class="service-title">Software Trading and Solutions</h3>
-                <p class="service-description">Native and cross-platform mobile applications for iOS and Android.</p>
-                <div>
-                    <a href="./Software-Trading&Solutions.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3 class="service-title">Fully Managed IT Services</h3>
-                <p class="service-description">User-centered design solutions that enhance user experience and engagement.</p>
-                <div>
-                    <a href="./Fully-Managed-IT-Services.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 4 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <h3 class="service-title">IT Consultancy</h3>
-                <p class="service-description">Comprehensive digital marketing strategies to grow your online presence.</p>
-                <div>
-                    <a href="./IT-Consultancy.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 5 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-search"></i>
-                </div>
-                <h3 class="service-title">Complete IT Audit</h3>
-                <p class="service-description">Improve your search engine rankings and drive organic traffic to your website.</p>
-                <div>
-                    <a href="./completeIT-Audit.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 6 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3 class="service-title">IT Support</h3>
-                <p class="service-description">Scalable cloud infrastructure and migration services for your business.</p>
-                <div>
-                    <a href="./IT-Support.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 7 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3 class="service-title">Office IT Setup</h3>
-                <p class="service-description">Protect your digital assets with our advanced security solutions.</p>
-                <div>
-                    <a href="./office-IT-setup.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 8 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3 class="service-title">Structured Cabling</h3>
-                <p class="service-description">Transform your data into actionable insights for better decision making.</p>
-                <div>
-                    <a href="./Structured-Cabling.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 9 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3 class="service-title">Firewall Installation</h3>
-                <p class="service-description">Expert guidance on technology implementation and digital transformation.</p>
-                <div>
-                    <a href="./Firewall-Installation.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 10 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3 class="service-title">Security Camera Systems</h3>
-                <p class="service-description">24/7 technical assistance and maintenance for your systems.</p>
-                <div>
-                    <a href="./Security-Camera-Systems.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 11 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3 class="service-title">Server Management, Solutions & Installation</h3>
-                <p class="service-description">Implement artificial intelligence to automate processes and enhance efficiency.</p>
-                <div>
-                    <a href="./Server-Management.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 12 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-project-diagram"></i>
-                </div>
-                <h3 class="service-title">IP Telephony</h3>
-                <p class="service-description">Efficient project planning, execution, and delivery to meet your business goals.</p>
-                <div>
-                    <a href="./IP-Telephony.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 13 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <h3 class="service-title">PBX Setup</h3>
-                <p class="service-description">Engaging and SEO-friendly content for your website and marketing campaigns.</p>
-                <div>
-                    <a href="./PBX-Setup.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 14 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-video"></i>
-                </div>
-                <h3 class="service-title">Routers & Switches</h3>
-                <p class="service-description">Professional video production services for marketing and educational purposes.</p>
-                <div>
-                    <a href="./Routers&Switches.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 15 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-shopping-cart"></i>
-                </div>
-                <h3 class="service-title">Data Recovery</h3>
-                <p class="service-description">Complete e-commerce development and integration for your online business.</p>
-                <div>
-                    <a href="./Data-Recovery.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 16 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-bullhorn"></i>
-                </div>
-                <h3 class="service-title">Data Solutions</h3>
-                <p class="service-description">Strategic social media campaigns to boost your brand visibility and engagement.</p>
-                <div>
-                    <a href="./Data-Solutions.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-            
-            <!-- Service 17 -->
-            <div class="service-item">
-                <div class="service-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <h3 class="service-title">Microsoft Cloud Solutions</h3>
-                <p class="service-description">Customized training programs and workshops for your team and clients.</p>
-                <div>
-                    <a href="./Microsoft-Cloud-Solutions.html"><div class="btn fs-6">View more <i class="fas fa-arrow-right ps-2"></i></div></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Footer section -->
-<footer>
-    <div class="footer-container">
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-laptop"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Computer and Accessories Trading</h3>
+                <p class="service-description">
+                    Specialize in the trading of high-quality computer systems and accessories tailored to meet the diverse needs of individuals, businesses, and institutions
+                </p>
+                <a href="./Compute&Accessories-Trading.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+          
+
+          <!-- Service 2 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-compact-disc"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Software Trading and Solutions</h3>
+                <p class="service-description">
+                    Provide a wide range of licensed software products and customized IT solutions to help businesses streamline operations
+                </p>
+                <a href="./Software-Trading&Solutions.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 3 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-tools"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Fully Managed IT Services</h3>
+                <p class="service-description">
+                    Fully Managed IT Services designed to take the complexity out of technology management
+                </p>
+                <a href="./Fully-Managed-IT-Services.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 4 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">IT Consultancy</h3>
+                <p class="service-description">
+                    IT Consultancy services are designed to help businesses make smart, future-ready technology decisions
+                </p>
+                <a href="./IT-Consultancy.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 5 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-clipboard-check"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Complete IT Audit</h3>
+                <p class="service-description">
+                    Complete IT Audit services to evaluate the efficiency, security, and compliance of your IT infrastructure
+                </p>
+                <a href="./completeIT-Audit.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 6 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-headset"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">IT Support</h3>
+                <p class="service-description">
+                    Provide reliable and responsive IT Support services designed to keep your business running smoothly
+                </p>
+                <a href="./IT-Support.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 7 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Office IT Setup</h3>
+                <p class="service-description">
+                    End-to-end Office IT Setup solutions to get your workplace up and running with a secure, efficient, and future-ready IT environment
+                </p>
+                <a href="./office-IT-setup.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 8 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Structured Cabling</h3>
+                <p class="service-description">
+                    A strong and organized cabling infrastructure is the backbone of any reliable IT system
+                </p>
+                <a href="./Structured-Cabling.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 9 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Firewall Installation</h3>
+                <p class="service-description">
+                    Protect your business from cyber threats with Skytech’s Firewall Installation services
+                </p>
+                <a href="./Firewall-Installation.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 10 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Security Camera Systems</h3>
+                <p class="service-description">
+                    Protect your people, property, and assets with Skytech’s Security Camera Systems
+                </p>
+                <a href="./Security-Camera-Systems.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 11 -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Server Management, Solutions & Installation</h3>
+                        <p class="service-description">
+                            Setting up a new server environment or need expert management of your existing infrastructure
+                        </p>
+                        <a href="./Server-Management.html" class="view-more">
+                            View more <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+          <!-- Service 12 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-phone"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">IP Telephony</h3>
+                <p class="service-description">
+                    Stay connected with modern, cost-effective communication through Skytech’s IP Telephony Solutions
+                </p>
+                <a href="./IP-Telephony.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 13 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-project-diagram"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">PBX Setup</h3>
+                <p class="service-description">
+                    Enhance your business communication with a reliable and efficient PBX 
+                </p>
+                <a href="./PBX-Setup.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 14 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Routers & Switches</h3>
+                <p class="service-description">
+                    A reliable and secure network starts with the right hardware
+                </p>
+                <a href="./Routers&Switches.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 15 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Data Recovery</h3>
+                <p class="service-description">
+                    We specialize in safely retrieving lost, deleted, or corrupted data
+                </p>
+                <a href="./Data-Recovery.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 16 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Data Solutions</h3>
+                <p class="service-description">
+                    n today’s digital world, managing data effectively is key to business success
+                </p>
+                <a href="./Data-Solutions.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+          <!-- Service 17 -->
+          <div class="service-item">
+            <div class="service-icon">
+                <i class="fas fa-cloud"></i>
+            </div>
+            <div class="service-content">
+                <h3 class="service-title">Microsoft Cloud Solutions</h3>
+                <p class="service-description">
+                    Empower your business with the flexibility, security, and productivity of the cloud
+                </p>
+                <a href="./Microsoft-Cloud-Solutions.html" class="view-more">
+                    View more <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+      <div class="footer-container">
         <!-- Logo and company description -->
         <div class="footer-logo">
-            <img src="../assets/images/skytechitlogo.png" alt="Company Logo">
-            <div class="footer-logo-text">
-                <h1>SKYTECH</h1>
-                <p>IT SOLUTIONS</p>
-            </div>
+          <img src="../assets/images/skytechitlogo.png" alt="Company Logo" />
+          <div class="footer-logo-text">
+            <h1>SKYTECH</h1>
+            <p>IT SOLUTIONS</p>
+          </div>
         </div>
-        
+
         <!-- Quick links -->
         <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/#about">About Us</a></li>
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#faq">FAQs</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#faq">FAQs</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
         </div>
-        
+
         <!-- Contact information -->
         <div class="footer-contact">
-            <h3>Contact Us</h3>
-            <div class="contact-info">
-                <p><i class="bi bi-geo-alt-fill"></i> United Arab Emirates</p>
-                <p><i class="bi bi-telephone"></i> +971544706417</p>
-                <p><i class="bi bi-envelope"></i> Info@skytechfze.com</p>
-            </div>
-            
-            <!-- Social media links -->
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Copyright section -->
-    <div class="footer-bottom">
-        <p>&copy; 2025 SKYTECH ITSOLUTIONS. All Rights Reserved.</p>
-    </div>
-</footer>
+          <h3>Contact Us</h3>
+          <div class="contact-info">
+            <p><i class="bi bi-geo-alt-fill"></i> United Arab Emirates</p>
+            <p><i class="bi bi-telephone"></i> +971544706417</p>
+            <p><i class="bi bi-envelope"></i> Info@skytechfze.com</p>
+          </div>
 
+          <!-- Social media links -->
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright section -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 SKYTECH ITSOLUTIONS. All Rights Reserved.</p>
+      </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/script.js"></script>
-</body>
+  </body>
 </html>
