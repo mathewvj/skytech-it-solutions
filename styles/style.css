@@ -42,16 +42,17 @@ body {
 }
 
 .logo-text h1 {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0;
-  font-weight: bold;
+  font-weight: 600;
   color: #07708dea;
 }
 
 .logo-text p {
   font-size: 0.9rem;
   color: #325368d9;
-  margin: 0px 5px;
+  margin: 0px 20px;
 }
 
 /* Toggler Button */
@@ -149,20 +150,241 @@ body {
   }
 }
 
-.hero {
-  background: linear-gradient(rgba(0, 123, 255, 0.174), rgba(0, 123, 255, 0.8)),
-    url("../assets/images/heroimage.jpg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-  min-height: 90vh;
+
+/* Hero section */
+#heroCarousel {
+  position: relative;
+  height: 60vh;
+  max-height: 700px;
+  overflow: hidden;
 }
-.hero-content {
-  background-color: #00000099;
-  border-radius: 30px;
+
+#heroCarousel .carousel-item {
+  height: 60vh;
+  max-height: 700px;
+  background-color: #343a40;
+}
+
+#heroCarousel img {
+  object-fit: fill;
+  height: 100vh;
+  filter: brightness(0.6);
+}
+
+.carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
   text-align: center;
-  padding: 80px 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .lead {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  #heroCarousel {
+    height: 50vh;
+  }
+  #heroCarousel .carousel-item img {
+    height: 50vh; 
+  }
+  #heroCarousel .carousel-item {
+    height: 50vh;
+    max-height: 400px;
+    background-color: #343a40;
+  }
+
+  .hero-content h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+  .hero-content .btn{
+   font-size: 1rem;
+  }
+  
+  .hero-content .lead {
+    font-size: 1rem;
+  }
+}
+
+/* Brands deal with */
+.brands-section {
+  padding: 30px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.brands-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-heading {
+  /* font-size: 28px; */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-heading:after {
+  content: '';
+  display: block;
+  width: 180px;
+  height: 4px;
+  background-color: #0076CE;
+  margin: 10px auto 0;
+}
+
+/* Brands container layout */
+.brands-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual logo styling */
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo-wrapper {
+  width: 70px;
+  height: 70px;
+  /* border-radius: 50%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.logo-wrapper:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
+}
+
+/* Logo size */
+.rotating-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: fill;
+}
+
+/* Logo rotation animations */
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Alternate rotation directions for visual interest */
+.brand-logo:nth-child(odd) .rotating-logo {
+  animation: rotateClockwise 20s linear infinite;
+}
+
+.brand-logo:nth-child(even) .rotating-logo {
+  animation: rotateCounterClockwise 25s linear infinite;
+}
+
+/* Brand-specific border colors */
+/* .logo-wrapper.dell { border: 3px solid #007DB8; }
+.logo-wrapper.lenovo { border: 3px solid #E1140A; }
+.logo-wrapper.hp { border: 3px solid #0096D6; }
+.logo-wrapper.asus { border: 3px solid #00539B; }
+.logo-wrapper.amd { border: 3px solid #ED1C24; }
+.logo-wrapper.acer { border: 3px solid #83B81A; }
+.logo-wrapper.samsung { border: 3px solid #1428A0; }
+.logo-wrapper.intel { border: 3px solid #0071C5; }
+.logo-wrapper.tp-link { border: 3px solid #4ACBD6; }
+.logo-wrapper.cisco { border: 3px solid #1BA0D7; }
+.logo-wrapper.microsoft { border: 3px solid #F25022; }
+.logo-wrapper.msi { border: 3px solid #FF0000; } */
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .brands-section .container{
+    display: block;
+
+  }
+
+  .brands-container {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .brands-section .container{
+    display: block;
+
+  }
+
+  .brands-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .logo-wrapper {
+      width: 80px;
+      height: 80px;
+  }
+  
+  .rotating-logo {
+      width: 50px;
+      height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands-section .container{
+    display: block;
+
+  }
+  .brands-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+  }
+  
+  .logo-wrapper {
+      width: 80px;
+      height: 80px;
+      padding: 10px;
+  }
+  
+  .rotating-logo {
+      width: 50px;
+      height: 50px;
+  }
+  
+  .section-heading {
+      font-size: 28px;
+      margin-bottom: 30px;
+  }
 }
 
 /* about section */
@@ -477,7 +699,7 @@ body {
   color: #0750be;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px){
   .faq {
     padding: 50px 0;
   }
@@ -511,6 +733,41 @@ body {
     font-size: 14px;
   }
 }
+
+/* @media (max-width: 768px) {
+  .faq {
+    padding: 50px 0;
+  }
+  .faq .container {
+    display: block;
+    padding: 30px;
+  }
+
+  .faq .section-title h2::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .accordion-header {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+
+  .accordion-content p {
+    font-size: 14px;
+  }
+} */
 
 /* Contact section */
 
@@ -884,21 +1141,22 @@ footer {
 }
 
 .footer-logo img {
-  max-width: 100px;
+  max-width: 130px;
   height: auto;
 }
 
 .footer-logo-text h1 {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 0;
-  font-weight: bold;
+  font-weight: 600;
   color: #07708dea;
 }
 
 .footer-logo-text p {
   font-size: 0.9rem;
   color: #325368d9;
-  margin: 0px 10px;
+  margin: 0px 20px;
 }
 
 /* Quick links section */

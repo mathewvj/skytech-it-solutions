@@ -33,16 +33,17 @@
   }
 
   .logo-text h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0;
-    font-weight: bold;
+    font-weight: 600;
     color: #07708dea;
   }
-
+  
   .logo-text p {
     font-size: 0.9rem;
     color: #325368d9;
-    margin: 0px 5px;
+    margin: 0px 20px;
   }
 
   /* Toggler Button */
@@ -509,21 +510,22 @@
   }
 
   .footer-logo img {
-    max-width: 100px;
+    max-width: 130px;
     height: auto;
   }
-
+  
   .footer-logo-text h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     margin-bottom: 0;
-    font-weight: bold;
+    font-weight: 600;
     color: #07708dea;
   }
-
+  
   .footer-logo-text p {
     font-size: 0.9rem;
     color: #325368d9;
-    margin: 0px 10px;
+    margin: 0px 20px;
   }
 
   /* Quick links section */
